@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Add Book{% endblock %}
+{% block main %}
+<h1>Add a New Book</h1>
+   <div class="form-container">
+     <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Add Book</button>
+    </form>
+    {% if msg %}
+        <p style="color:green;">{{ msg }}</p>
+    {% endif %}
+   </div>
+{% endblock %}

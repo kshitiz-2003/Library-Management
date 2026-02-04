@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}View Books{% endblock %}
+{% block main %}
+    <div class="tablecont">
+        <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published Date</th>
+            <th>ISBN</th>
+            <th>Pages</th>
+        </tr>
+        {% for book in bookdata %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.published_date }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.pages }}</td>
+            <td><a href="{% url 'deletebook' book.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    {% endblock %}

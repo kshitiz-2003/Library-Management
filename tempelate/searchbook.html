@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Search Books{% endblock %}
+{% block main %}
+
+<div class="form-container">
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="id" placeholder="Enter book title or author" required>
+    <button type="submit">Search</button>
+</form>
+</div>
+<p>
+    {{book.title}} , {{book.author}}
+</p>
+
+
+{% endblock%}
